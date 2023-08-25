@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-def isUpper(str):
-     if (ord(c) < 97):
-          print(f"{c} is upper".format(c))
-     else:
-         print(f"{c} is lower".format(c))
+def uppercase(str):
+    for i in str:
+        up = chr(ord(i) - 32) if 97 <= ord(i) <= 122 else i
+        print("{}".format(up), end='')
+    print()
