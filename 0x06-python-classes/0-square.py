@@ -1,5 +1,8 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""An empty square class"""
+
+
 class Square:
-    #new square class
-my_square = Square()
-print(my_square)
+    """ends the class"""
+    pass
