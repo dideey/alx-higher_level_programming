@@ -45,7 +45,7 @@ class Square:
         """prints the square to std
         output
         """
-        if self.__size == 0
+        if self.__size == 0:
         print()
         else:
             for _ in range(self.__size):
