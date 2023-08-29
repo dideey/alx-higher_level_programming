@@ -6,5 +6,5 @@ class Square:
     """class"""
     def __innit__(self, size):
         """mesthod where i initialize the size field"""
-        self.size = size
+        self.__size = size
         """the size variable"""
