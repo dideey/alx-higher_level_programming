@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-"""an empty square"""
+"""An example of basic python class"""
 
 
 class Square:
