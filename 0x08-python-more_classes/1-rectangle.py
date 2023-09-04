@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """A class with private
     getters and setters
+    Raises:
+        TypeError: if not int
+        ValueError: if < 0
 """
 
 
