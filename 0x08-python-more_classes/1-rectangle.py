@@ -6,7 +6,18 @@
 
 class Rectangle:
 
+    """
+    a rectanglr class
+    """
+
     def __init__(self, width=0, height=0)
+
+    """a method with 3 parameters
+    Args:
+        self
+        width
+        height
+    """
     self._width = width
     self._height = height
 
@@ -42,6 +53,9 @@ def width(self, value):
     Args:
         self
         value
+    Raises:
+        TypeErroe: if value != int
+        ValueError: if < 0
 """
 
 
@@ -72,4 +86,7 @@ def height(self, value):
     Args:
         self.
         value.
+    Raises:
+        TypeError:if not int
+        ValueError:if value is < 0
 """
