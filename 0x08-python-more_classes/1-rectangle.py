@@ -10,86 +10,74 @@
 class Rectangle:
 
     """
-    a rectanglr class
+    A rectangle class
     """
 
-    def __init__(self, width=0, height=0)
+    def __init__(self, width=0, height=0):
+        """
+        Initialize the Rectangle object.
 
-    """a method with 3 parameters
-    Args:
-        self
-        width
-        height
-    """
-    self._width = width
-    self._height = height
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+        """
+        self._width = width
+        self._height = height
 
+    @property
+    def width(self):
+        """
+        Get the width of the rectangle.
 
-""" Method declaring the width and height
-"""
+        Returns:
+            int: The width of the rectangle.
+        """
+        return self._width
 
+    @width.setter
+    def width(self, value):
+        """
+        Set the width of the rectangle.
 
-@property
-def width(self):
-    return self._width
+        Args:
+            value (int): The new width of the rectangle.
 
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        elif value < 0:
+            raise ValueError("width must be >= 0")
+        else:
+            self._width = value
 
-"""private getter for width
-    Args:
-        self.
-    Return:
-        width
-"""
+    @property
+    def height(self):
+        """
+        Get the height of the rectangle.
 
+        Returns:
+            int: The height of the rectangle.
+        """
+        return self._height
 
-@width.setter
-def width(self, value):
-    if value is not int
-    raise TypeError("width must be an integer")
-    elif value < 0
-    raise ValueError("width must be >= 0")
-    else
-    self._width = value
+    @height.setter
+    def height(self, value):
+        """
+        Set the height of the rectangle.
 
+        Args:
+            value (int): The new height of the rectangle.
 
-"""private setter for width
-    Args:
-        self
-        value
-    Raises:
-        TypeErroe: if value != int
-        ValueError: if < 0
-"""
-
-
-@property
-def height(self):
-    return self._height
-
-
-"""private getter for height
-    Args:
-        self.
-    Return:
-        height
-"""
-
-
-@height.setter
-def height(self, value):
-    if value is not int
-    raise TypeError("height must be an integer")
-    elif value < 0
-    raise ValueError("height must be >= 0")
-    else
-    self._height = value
-
-
-"""Private setter for height
-    Args:
-        self.
-        value.
-    Raises:
-        TypeError:if not int
-        ValueError:if value is < 0
-"""
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
+        else:
+            self._height = value
