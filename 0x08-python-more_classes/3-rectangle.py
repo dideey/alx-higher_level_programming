@@ -14,12 +14,12 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        
+
     @property
     def width(self):
         """Getter of the rectangle width."""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -28,12 +28,12 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
-    
+
     @property
     def height(self):
         """Getter of the rectangle height."""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -42,22 +42,22 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
-            
+
     def area(self):
         return self.__width * self.__height
-    
+
     def perimeter(self):
         perim = (self.__height + self.__width)*2
-        if(self.__width == 0 or self.__height == 0):
+        if (self.__width == 0 or self.__height == 0):
             perim = 0
         return perim
-        
+
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ''
-        rectang = ''
+        rec-tang = ''
         for i in range(self.__height):
-            rectang += '#' * self.__width
+            rec-tang += '#' * self.__width
             if i != self.__height - 1:
-                rectang += '\n'
-        return rectang
+                rec-tang += '\n'
+        return rec-tang
