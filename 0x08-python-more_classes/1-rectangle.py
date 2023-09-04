@@ -21,6 +21,10 @@ def width(self):
 
 
 """private getter for width
+    Args:
+        self.
+    Return:
+        width
 """
 
 
@@ -35,6 +39,9 @@ def width(self, value):
 
 
 """private setter for width
+    Args:
+        self
+        value
 """
 
 
@@ -44,6 +51,10 @@ def height(self):
 
 
 """private getter for height
+    Args:
+        self.
+    Return:
+        height
 """
 
 
@@ -58,4 +69,7 @@ def height(self, value):
 
 
 """Private setter for height
+    Args:
+        self.
+        value.
 """
