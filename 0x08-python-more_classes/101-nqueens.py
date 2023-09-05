@@ -1,28 +1,43 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 import sys
 
-
 def is_safe(board, row, col, n):
-    # Check the column on top for any queen
+    """
+    Check if it's safe to place a queen at a given position on the board.
+
+    Args:
+        board (list): The chessboard represented as a list of lists.
+        row (int): The row to check.
+        col (int): The column to check.
+        n (int): The size of the board.
+
+    Returns:
+        bool: True if it's safe to place a queen; False otherwise.
+    """
     for i in range(row):
         if board[i][col] == 'Q':
             return False
 
-    # Check upper-left diagonal
     for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
         if board[i][j] == 'Q':
             return False
 
-    # Check upper-right diagonal
     for i, j in zip(range(row, -1, -1), range(col, n)):
         if board[i][j] == 'Q':
             return False
 
     return True
 
-
 def solve_nqueens(n):
+    """
+    Solve the N queens problem and return all possible solutions.
 
+    Args:
+        n (int): The size of the board.
+
+    Returns:
+        list: A list of solutions, each represented as a list of strings.
+    """
     def backtrack(row):
         if row == n:
             solutions.append([''.join(row) for row in board])
@@ -38,7 +53,6 @@ def solve_nqueens(n):
     solutions = []
     backtrack(0)
     return solutions
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -60,3 +74,4 @@ if __name__ == "__main__":
         for row in solution:
             print(row)
         print()
+
