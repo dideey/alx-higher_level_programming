@@ -1,20 +1,14 @@
 #!/usr/bin/python3
 def add_integer(a, b=98):
-    """adds 2 ints
-    Args:
-        a
-        b
-    Raises:
-        TypeError
-    Return: sum
-    """
-
-    if not isinstance(a, (int, float)):
-        raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
-        raise TypeError("b must be an integer")
-    
-    x = int(a)
-    y = int(b)
-
-    return x + y
+    """ function that adds two intergers"""
+    if not isinstance(a, (int,float)):
+        raise TypeError('a must be an integer')
+    if not isinstance(b,(int,float)):
+        raise TypeError('b must be an integer')
+        
+    """ check if they are floats"""
+    if isinstance(a, float):
+        a=int(a)
+    if isinstance(b, float):
+        b=int(b)
+    return a + b
