@@ -29,7 +29,8 @@ class Rectangle(BaseGeometry):
         width and height are private instances
     """
     def __init__(self, width, height):
-        self.integer_validator("width", width)
+        super().__init__()
         self.__width = width
-        self.integer_validator("height", height)
         self.__height = height
+        self.integer_validator("width", self.__width)
+        self.integer_validator("height", self.__height)
