@@ -3,7 +3,7 @@
 
 
 class MyInt(int):
-"""The class"""
+    """The class"""
 
     def __eq__(self, other):
         """return"""
