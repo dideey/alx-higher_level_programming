@@ -4,8 +4,8 @@
 
 def add_new_attribute(obj, name, value):
 
-    """adds the new attribute to an object and raises a
-        typeError
+    """adds the new attribute to an object
+        Raises: TypeError
     """
 
     if hasattr(obj, '__dict__'):
