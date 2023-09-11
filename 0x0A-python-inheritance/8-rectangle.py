@@ -1,28 +1,8 @@
 #!/usr/bin/python3
-"""It inherits from class BaseGeo
-a class with an area method"""
+"""It inherits from class BaseGeo"""
 
 
-class BaseGeometry:
-    """defining the method
-        Raises:
-            custom error
-    """
-    def area(self):
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """validates the input value
-            Raises:
-                ValuEerror
-                TypeError
-        """
-
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name}must be greater than 0")
-
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """
