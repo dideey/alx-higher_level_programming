@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Read file function"""
 
+
 def read_file(filename=""):
     """prints"""
 
