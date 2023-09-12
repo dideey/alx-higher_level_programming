@@ -1,9 +1,16 @@
 #!/usr/bin/python3
-"""Reads a text file and prints to stdout"""
+"""Read file function"""
 
+def read_file(filename=""):
 
-def read_file(filename="", encoding="UTF8"):
-    """reads the file"""
+    """ with statement used to ensure the file is properly closed after it has been read"""
 
-    with open(filename="") as f
-    print(f)
+    """ encoding parameter is set to utf-8"""
+
+    with open(filename, 'r', encoding='utf-8') as f:
+
+        """ read method to read the file"""
+        file_contents = f.read()
+
+        """print the file contents"""
+        print(file_contents, end="")
