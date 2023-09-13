@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-"""import json"""
 
-
+""" Import json """
 import json
 
-
 def load_from_json_file(filename):
-    """creates in json format
-        Return: the created object
     """
-    with open(filename, "r") as f:
-    return json.load(f)
+    this reads an object from the JSON file
+
+    Returns: this is a Python data structure represented by the JSON in the file.
+    """
+    with open(filename, 'r') as f:
+        return json.load(f)
+
