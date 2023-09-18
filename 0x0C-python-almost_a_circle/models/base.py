@@ -1,18 +1,31 @@
 #!/usr/bin/python3
 
+"""
+Base class module.
+
+This module defines the Base class.
+"""
+
 import json
 
 
 class Base:
-    """class base"""
+    """
+    Base class is the base class for other classes.
+
+    Attributes:
+        nb_objects (int): The number of objects created.
+    """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """checking if id is none
-            and assigning to it
         """
+        Initialize a Base instance.
 
+        Args:
+            id (int): The identifier for the instance.
+        """
         if id is not None:
             self.id = id
         else:
@@ -22,25 +35,39 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        return a list
+        Convert a list of dictionaries to a JSON string.
+
+        Args:
+            list_dictionaries (list): A list of dictionaries.
+
+        Returns:
+            str: A JSON string representation of the list of dictionaries.
         """
         if list_dictionaries is None:
-            return ("[]")
-
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        class method
+        Save a list of instances to a file.
+
+        Args:
+            list_objs (list): A list of instances.
         """
+        pass
 
     @staticmethod
     def from_json_string(json_string):
         """
-        return a json string representation
+        Convert a JSON string to a list of dictionaries.
+
+        Args:
+            json_string (str): A JSON string.
+
+        Returns:
+            list: A list of dictionaries parsed from the JSON string.
         """
         if json_string is None:
-            x = []
-            return x
+            return []
         return json.loads(json_string)
