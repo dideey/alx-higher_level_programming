@@ -55,7 +55,19 @@ class Base:
         Args:
             list_objs (list): A list of instances.
         """
-        pass
+        filename = "{}.json".format(cls.__name__)
+
+        objects_list = []
+
+        if list_objs is not None and len(list_objs) > 0:
+
+            for instance in list_objs:
+
+                objects_list.append(cls.to_dictionary(instance))
+
+        with open(filename, 'w', encoding='utf-8') as f:
+
+            f.write(cls.to_json_string(objects_list))
 
     @staticmethod
     def from_json_string(json_string):
