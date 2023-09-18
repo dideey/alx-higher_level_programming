@@ -3,7 +3,12 @@
 """ïmporting the base class"""
 from models.base import Base
 
+
 class Rectangle(Base):
+    """
+    class rectangle
+    """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """seting the values"""
         super().__init__(id)
@@ -13,9 +18,12 @@ class Rectangle(Base):
         self.__y = y
 
     @property
+    """
+    getter
+    """
     def width(self):
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -27,7 +35,7 @@ class Rectangle(Base):
     @property
     def height(self):
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -39,7 +47,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         if not isinstance(value, int):
@@ -51,7 +59,7 @@ class Rectangle(Base):
     @property
     def y(self):
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         if not isinstance(value, int):
@@ -64,23 +72,22 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-            for _ in range (self.__height):
-                print("#" * self.__width)
+        for _ in range(self.__height):
+            print("#" * self.__width)
 
     def __str__(self):
-        
+
         iid = "({})".format(self.id)
         xy = " {}/{} - ".format(self.__x, self.__y)
         widhe = "{}/{}".format(self.__width, self.__height)
-        
         return "[Rectangle] " + iid + xy + widhe
-    
+
     def update(self, *args, **kwargs):
         if args:
             attributes = ["id", "width", "height", "x", "y"]
             for i, value in enumerate(args):
                 setattr(self, attributes[i], value)
-        
+
         if kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)

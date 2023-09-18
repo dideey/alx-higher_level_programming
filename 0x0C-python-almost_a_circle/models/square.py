@@ -4,27 +4,38 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
-    """"""
+    """
+    square class
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        class constructor
+        """
 
         super().__init__(size, size, id, x, y)
         self.__width = size
         self.__height = size
 
     @property
+    """
+    getter
+    """
     def size(self):
         return self.width
 
     @size.setter
+    """
+    setter
+    """
     def size(self, value):
         self.width = value
         self.height = value
-        
 
     def __str__(self):
-        
+
         iid = "({})".format(self.id)
         xy = " {}/{} - ".format(self.x, self.y)
         size = "{}".format(self.height)
@@ -44,8 +55,8 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         return {
-                'id' : self.id,
-                'size' : self.size,
-                'x' : self.x,
-                'y' : self.y,
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y,
                 }

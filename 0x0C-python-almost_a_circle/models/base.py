@@ -2,6 +2,7 @@
 
 import json
 
+
 class Base:
     """class base"""
 
@@ -12,7 +13,7 @@ class Base:
             and assigning to it
         """
 
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -20,17 +21,26 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        return a list
+        """
         if list_dictionaries is None:
             return ("[]")
-        return  json.dumps(list_dictionaries)
+
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-
+        """
+        class method
+        """
 
     @staticmethod
-        def from_json_string(json_string):
-            if json_string is None:
-                x = []
-                return x
-            return json.loads(json_string)
+    def from_json_string(json_string):
+        """
+        return a json string representation
+        """
+        if json_string is None:
+            x = []
+            return x
+        return json.loads(json_string)
