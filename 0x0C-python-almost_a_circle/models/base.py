@@ -99,3 +99,23 @@ class Base:
         dicti.update(**dictionary)
 
         return dicti
+
+    @classmethod
+    def load_from_file_csv(cls):
+
+        """ returns filename in json format"""
+
+        filename = "{}.csv".format(cls.__name__)
+        list_instance = []
+
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                file_strs = cls.from_json_string(f.read())
+
+            for instance in file_strs:
+                list_instance.append(cls.create(**instance))
+
+        except FileNotFoundError:
+            pass
+
+        return list_instanc
