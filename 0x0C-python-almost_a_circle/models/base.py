@@ -101,21 +101,43 @@ class Base:
         return dicti
 
     @classmethod
+    def load_from_file(cls):
+        """Method that gets  a list of instances
+
+        Returns:
+            instance: returns a list of instances
+        """
+        filename = cls.__name__ + ".json"
+        if not os.path.exists(filename):
+            return []
+
+        with open(filename, 'r') as file:
+            json_data = file.read()
+
+        instance_dicts = cls.from_json_string(json_data)
+        instances = [cls.create(**data) for data in instance_dicts]
+        return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Base class method that that serializes and deserializes in CSV
+
+        Args:
+            list_objs (list ): list objects
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                writer.writerow(obj.to_csv_row())
+
+    @classmethod
     def load_from_file_csv(cls):
-
-        """ returns filename in json format"""
-
-        filename = "{}.csv".format(cls.__name__)
-        list_instance = []
-
-        try:
-            with open(filename, 'r', encoding='utf-8') as f:
-                file_strs = cls.from_json_string(f.read())
-
-            for instance in file_strs:
-                list_instance.append(cls.create(**instance))
-
-        except FileNotFoundError:
-            pass
-
-        return list_instanc
+        filename = cls.__name__ + ".csv"
+        instances = []
+        with open(filename, 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                instance = cls.create_from_csv_row(row)
+                instances.append(instance)
+        return instances
