@@ -3,6 +3,6 @@ CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 USE hbtn_0d_usa;
 CREATE TABLE IF NOT EXISTS(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    state_id INT FOREIGN KEY(state.TABLE.id),
+    state_id INT FOREIGN KEY REFERENCES states(id),
     name VARCHAR(256) NOT NULL
 );
