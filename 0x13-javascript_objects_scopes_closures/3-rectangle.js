@@ -8,12 +8,13 @@ class Rectangle {
   }
 
   print () {
-    for (let i = 0; i < this.h; i++) {
-      for (let j = 0; j < this.w; j++) {
-        console.log('#');
+    for (let i = 0; i < this.height; i++) {
+      let display = '';
+      for (let j = 0; j < this.width; j++) {
+        display += '#';
       }
+      console.log(display);
     }
   }
-
 }
 module.exports = Rectangle;
