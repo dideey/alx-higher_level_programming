@@ -3,8 +3,8 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host='localhost', user=sys.argv[1], 
-                        password=sys.argv[2], dbname=sys.argv[3], port=3306)
+    db = MySQLdb.connect(host='localhost', user=sys.argv[1],
+                        password=sys.argv[2], db=sys.argv[3], port=3306)
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states")
     states = cursor.fetchall()
@@ -12,4 +12,3 @@ if __name__ == "__main__":
         print(state)
     cursor.close()
     db.close()
-    
