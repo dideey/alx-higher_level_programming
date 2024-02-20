@@ -4,7 +4,6 @@ rq(process.argv[2], (error, response) => {
         if (error) {
             console.error('Error:', error);
         } else {
-            const statusCode = response.statusCode;
-            console.log('Code:', statusCode);
+            console.log('Code:', response.statusCode);
         }
     });
