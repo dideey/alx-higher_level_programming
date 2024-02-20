@@ -5,6 +5,6 @@ rq.get(process.argv[2], (error, response) => {
     console.error('Error :');
   } else {
     const statusCode = response.statusCode;
-    console.log('Code :', statusCode);
+    console.log('Code:', statusCode);
   }
 });
